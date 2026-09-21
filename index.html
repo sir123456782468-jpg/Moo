@@ -16,14 +16,16 @@
         html, body {
             width: 100vw;
             height: 100vh;
+            min-height: -webkit-fill-available;
             overflow: hidden;
             background: radial-gradient(circle at center, #1a0013 0%, #0d0009 100%);
             font-family: 'Cairo', sans-serif;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             position: fixed;
+            padding: 15px 10px;
         }
 
         canvas {
@@ -50,19 +52,19 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 0 24px;
+            padding: 0 20px;
             transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .intro-title {
             font-family: 'Cinzel', serif;
-            font-size: clamp(1.4rem, 4.8vw, 2.6rem);
+            font-size: clamp(1.5rem, 5vw, 2.6rem);
             font-weight: 700;
             color: #ff8fa3;
-            letter-spacing: 3.5px;
+            letter-spacing: 3px;
             text-transform: uppercase;
             text-shadow: 0 0 20px rgba(255, 143, 163, 0.4);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             min-height: 1.5em;
         }
 
@@ -74,8 +76,8 @@
             opacity: 0;
             transform: translateY(20px) scale(0.95);
             transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-            width: 90%;
-            max-width: 360px;
+            width: 85%;
+            max-width: 340px;
             box-shadow: 0 15px 35px rgba(255, 75, 114, 0.2);
         }
 
@@ -104,14 +106,14 @@
             position: relative;
             background: rgba(20, 0, 12, 0.85);
             backdrop-filter: blur(20px);
-            padding: 20px 28px;
+            padding: 18px 24px;
             border-radius: 22px;
             z-index: 2;
             text-align: center;
         }
 
         .surprise-box-content p {
-            font-size: clamp(0.95rem, 3.2vw, 1.15rem);
+            font-size: clamp(1rem, 3.5vw, 1.2rem);
             color: #ffb3c6;
             font-weight: 600;
             letter-spacing: 1.5px;
@@ -124,13 +126,12 @@
             height: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: space-around;
             align-items: center;
             opacity: 0;
             pointer-events: none;
             transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1);
             z-index: 10;
-            padding: 4vh 0;
         }
 
         .main-container.active {
@@ -147,10 +148,10 @@
 
         .top-header h2 {
             font-family: 'Cinzel', serif;
-            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            font-size: clamp(1.6rem, 5.5vw, 2.5rem);
             font-weight: 700;
             color: #ff8fa3;
-            letter-spacing: 3.5px;
+            letter-spacing: 3px;
             text-transform: uppercase;
             text-shadow: 0 0 20px rgba(255, 143, 163, 0.4);
             margin-bottom: 2px;
@@ -158,7 +159,7 @@
 
         .top-header span {
             font-family: 'Great Vibes', cursive;
-            font-size: clamp(1.2rem, 3.8vw, 2rem);
+            font-size: clamp(1.3rem, 4vw, 2rem);
             color: #ffb3c6;
             text-shadow: 0 0 10px rgba(255, 179, 198, 0.4);
             display: block;
@@ -169,9 +170,8 @@
             padding: 3px;
             border-radius: 24px;
             overflow: hidden;
-            width: 82%;
-            max-width: 320px;
-            margin: 1vh 0;
+            width: 80%;
+            max-width: 300px;
             box-shadow: 0 15px 35px rgba(255, 75, 114, 0.2);
             animation: floatBox 3.5s ease-in-out infinite alternate;
             z-index: 10;
@@ -198,7 +198,7 @@
             position: relative;
             background: rgba(20, 0, 12, 0.85);
             backdrop-filter: blur(20px);
-            padding: 16px 20px;
+            padding: 14px 20px;
             border-radius: 22px;
             z-index: 2;
             text-align: center;
@@ -206,17 +206,17 @@
 
         .name-box-content h3 {
             font-family: 'Great Vibes', cursive;
-            font-size: clamp(2rem, 6vw, 2.8rem);
+            font-size: clamp(2.2rem, 7vw, 3rem);
             color: #ffb3c6;
             text-shadow: 0 0 15px rgba(255, 179, 198, 0.4);
             letter-spacing: 2px;
         }
 
         .glass-card {
-            width: 88%;
-            max-width: 380px;
-            padding: 32px 26px;
-            background: rgba(25, 0, 15, 0.75);
+            width: 90%;
+            max-width: 360px;
+            padding: 28px 22px;
+            background: rgba(25, 0, 15, 0.8);
             backdrop-filter: blur(25px);
             border: 1px solid rgba(255, 143, 163, 0.3);
             border-radius: 28px;
@@ -229,20 +229,20 @@
 
         .card-title {
             font-family: 'Cinzel', serif;
-            font-size: 1.35rem;
+            font-size: 1.25rem;
             color: #ff8fa3;
-            margin-bottom: 18px;
+            margin-bottom: 16px;
             letter-spacing: 2px;
         }
 
         .input-box {
             position: relative;
-            margin-bottom: 18px;
+            margin-bottom: 16px;
         }
 
         input[type="password"] {
             width: 100%;
-            padding: 14px 20px;
+            padding: 13px 18px;
             background: rgba(40, 0, 25, 0.6);
             border: 1px solid rgba(255, 143, 163, 0.4);
             border-radius: 40px;
@@ -271,7 +271,7 @@
             background: linear-gradient(135deg, #ff758c 0%, #ff4b72 100%);
             border: none;
             color: #fff;
-            padding: 14px;
+            padding: 13px;
             font-size: 1rem;
             font-weight: 600;
             border-radius: 40px;
@@ -289,7 +289,7 @@
         .error-msg {
             color: #ff6b6b;
             font-size: 0.825rem;
-            margin-top: 12px;
+            margin-top: 10px;
             opacity: 0;
             transition: opacity 0.3s ease;
         }
@@ -298,15 +298,15 @@
             opacity: 1;
         }
 
-        /* --- اسم منة الفخم في السما --- */
+        /* --- اسم منة ورقم 19 الفخم في السما --- */
         #skyNameBanner {
             position: absolute;
-            top: 7%;
+            top: 4vh;
             width: 100%;
             text-align: center;
             z-index: 25;
             opacity: 0;
-            transform: scale(0.5) translateY(-30px);
+            transform: scale(0.5) translateY(-20px);
             transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
             pointer-events: none;
         }
@@ -318,38 +318,53 @@
 
         #skyNameBanner h1 {
             font-family: 'Great Vibes', cursive;
-            font-size: clamp(2.8rem, 9vw, 5rem);
+            font-size: clamp(2.4rem, 8vw, 4rem);
             background: linear-gradient(135deg, #ff99bb 0%, #ff4b72 50%, #ffd700 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 35px rgba(255, 75, 114, 0.6);
-            letter-spacing: 3px;
+            text-shadow: 0 0 30px rgba(255, 75, 114, 0.6);
+            letter-spacing: 2px;
+            margin-bottom: -2px;
         }
 
-        #skyNameBanner p {
+        /* تصميم شيك جداً لرقم 19 تحت الاسم */
+        .age-badge-wrapper {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2px 14px;
+            background: linear-gradient(135deg, rgba(255, 75, 114, 0.25), rgba(255, 215, 0, 0.25));
+            border: 1px solid rgba(255, 143, 163, 0.5);
+            border-radius: 30px;
+            box-shadow: 0 0 15px rgba(255, 75, 114, 0.3);
+            margin-top: 2px;
+        }
+
+        .age-badge-wrapper span {
             font-family: 'Cinzel', serif;
-            color: #ffe3e6;
-            font-size: clamp(0.8rem, 2.5vw, 1rem);
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-top: -5px;
-            text-shadow: 0 0 15px rgba(255, 143, 163, 0.8);
+            color: #ffd700;
+            font-size: clamp(0.9rem, 3vw, 1.1rem);
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
         }
 
-        /* --- حاوية الجمل (مرتبة تحت بعضها بشكل شيك في الموبايل) --- */
+        /* --- حاوية الجمل (مرتبة ومضبوطة بالكامل للموبايل) --- */
         #messagesWrapper {
             position: absolute;
-            bottom: 4vh;
-            width: 90%;
-            max-width: 420px;
+            bottom: 3vh;
+            width: 92%;
+            max-width: 400px;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 8px;
             z-index: 25;
             opacity: 0;
             transform: translateY(20px);
             pointer-events: none;
             transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            max-height: 70vh;
+            overflow-y: visible;
         }
 
         #messagesWrapper.show {
@@ -359,17 +374,16 @@
         }
 
         .message-line-card {
-            background: rgba(25, 0, 15, 0.85);
+            background: rgba(25, 0, 15, 0.88);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 143, 163, 0.4);
-            border-radius: 16px;
-            padding: 11px 16px;
+            border-radius: 14px;
+            padding: 10px 14px;
             text-align: center;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.5), 0 0 15px rgba(255, 75, 114, 0.15);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.5), 0 0 12px rgba(255, 75, 114, 0.15);
             opacity: 0;
-            transform: translateY(12px) scale(0.96);
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            min-height: 46px;
+            transform: translateY(10px) scale(0.96);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -384,8 +398,8 @@
             font-family: 'Cairo', sans-serif;
             font-weight: 600;
             color: #ffe3e6;
-            font-size: clamp(0.9rem, 3vw, 1.1rem);
-            line-height: 1.5;
+            font-size: clamp(0.95rem, 3.4vw, 1.15rem); /* خط واضح وكبير ومناسب للموبايل */
+            line-height: 1.4;
             text-shadow: 0 0 10px rgba(255, 143, 163, 0.4);
             direction: rtl;
         }
@@ -439,10 +453,12 @@
         </div>
     </div>
 
-    <!-- اسم منة الفخم في السما -->
+    <!-- اسم منة ورقم 19 الفخم في السما -->
     <div id="skyNameBanner">
         <h1>Menna</h1>
-        <p>Happy Birthday To You ✨</p>
+        <div class="age-badge-wrapper">
+            <span>✨ 19th Birthday ✨</span>
+        </div>
     </div>
 
     <!-- حاوية الجمل -->
@@ -589,7 +605,7 @@
             let j = particles.length;
             while (j--) {
                 particles[j].update(j);
-                particles.draw ? particles[j].draw() : null; // حماية ضد الأخطاء
+                particles.draw ? particles[j].draw() : null;
             }
 
             if (fireworksEnabled && timer++ % 35 === 0) {
@@ -602,13 +618,14 @@
         }
         animateFireworks();
 
-        // الجمل المطلوبة
+        // الجمل المطلوبة بالترتيب
         const messageLines = [
+            "كل سنة وانتي طيبة وبخير يا منه ❤️",
+            "كل سنه وانتي طيبه يا احلي من تم 1️⃣9️⃣",
             "<span class='eng-text'>Happy Birthday Menna ❤️</span>",
-            "كل سنه وانتي طيبه يا احلي من تم 19 ❤️",
-            "ربنا يديمك ف حياتي يا منه ❤️",
-            "اتمني تكوني فرحتي بالحاجه الصغيره دي ❤️",
-            "<span class='eng-text'>Menna 1️⃣9️⃣ ✨</span>"
+            "ربنا يديمك ف حياتي يا نونا ❤️",
+            "<span class='eng-text'>Menna 1️⃣9️⃣</span>",
+            "اتمني الحاجه الصغيره دي تفرحك ❤️😂"
         ];
 
         let msgIndex = 0;
@@ -619,7 +636,6 @@
 
             const wrapper = document.getElementById('messagesWrapper');
             
-            // إنشاء كارت جديد لكل جملة
             const card = document.createElement('div');
             card.className = 'message-line-card';
             
@@ -628,54 +644,48 @@
             card.appendChild(textDiv);
             wrapper.appendChild(card);
 
-            // إظهار الكارت بحركة انسيابية
             setTimeout(() => {
                 card.classList.add('visible');
             }, 50);
 
-            // تجهيز النص وإزالة الـ HTML tags مؤقتاً لحساب الحروف وتأثير الـ Typewriter
             const fullHtml = messageLines[msgIndex];
             
-            // لو الجملة فيها span إنجليزي بنعاملها ككتلة واحدة أو بنكتبها بشكل ذكي
             if (fullHtml.includes('eng-text')) {
-                // عرض النص الإنجليزي المميز مباشرة بشكل احترافي
-                let currentText = "";
                 let htmlChars = fullHtml;
                 let charCounter = 0;
                 
                 function typeHtml() {
                     if (charCounter <= htmlChars.length) {
                         textDiv.innerHTML = htmlChars.substring(0, charCounter);
-                        charCounter += 2; // سرعة مناسبة للنص الجاهز
-                        setTimeout(typeHtml, 35);
+                        charCounter += 2;
+                        setTimeout(typeHtml, 30);
                     } else {
                         textDiv.innerHTML = htmlChars;
                         msgIndex++;
-                        setTimeout(displayNextMessageLine, 800);
+                        setTimeout(displayNextMessageLine, 700);
                     }
                 }
-                setTimeout(typeHtml, 200);
+                setTimeout(typeHtml, 150);
 
             } else {
-                // كتابة الجمل العربية حرف بحرف (Typewriter Effect)
                 let charPos = 0;
                 function typeArabic() {
                     if (charPos <= fullHtml.length) {
                         textDiv.innerHTML = fullHtml.substring(0, charPos);
                         charPos++;
-                        setTimeout(typeArabic, 45); // سرعة كتابة الحروف العربية
+                        setTimeout(typeArabic, 35);
                     } else {
                         msgIndex++;
-                        setTimeout(displayNextMessageLine, 800); // الانتقال للجملة اللي بعدها
+                        setTimeout(displayNextMessageLine, 700);
                     }
                 }
-                setTimeout(typeArabic, 200);
+                setTimeout(typeArabic, 150);
             }
         }
 
         // التحقق من الباسورد (2492007)
         function verifyPassword() {
-            const pass = document.exit ? "" : document.getElementById('passCode').value;
+            const pass = document.getElementById('passCode').value;
             const errorText = document.getElementById('errorText');
             
             if (pass === "2492007") {
@@ -692,7 +702,7 @@
                 setTimeout(() => {
                     document.getElementById('skyNameBanner').classList.add('show');
                     document.getElementById('messagesWrapper').classList.add('show');
-                    displayNextMessageLine(); // بدء عرض الكروت حرف حرف تحت بعضها
+                    displayNextMessageLine();
                 }, 500);
 
             } else {
