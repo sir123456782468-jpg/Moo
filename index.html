@@ -17,7 +17,6 @@
             width: 100vw;
             height: 100vh;
             overflow: hidden;
-            /* خلفية فاتحة ومبهجة بدرجات الباستيل والروز الهادئ */
             background: radial-gradient(circle at center, #fff5f8 0%, #ffe6f0 100%);
             font-family: 'Plus Jakarta Sans', sans-serif;
             display: flex;
@@ -27,7 +26,6 @@
             position: fixed;
         }
 
-        /* خلفية القلوب والنجوم المتحركة (بألوان واضحة وفاتحة) */
         canvas {
             position: absolute;
             top: 0;
@@ -38,7 +36,6 @@
             pointer-events: none;
         }
 
-        /* هالة إضاءة خلفية ناعمة ومضيئة */
         .ambient-glow {
             position: absolute;
             width: 75vw;
@@ -102,7 +99,7 @@
             animation: none;
         }
 
-        /* --- شاشة الـ Intro السينمائية (كتابة حرف حرف) --- */
+        /* --- شاشة الـ Intro السينمائية --- */
         #introScreen {
             position: absolute;
             top: 0;
@@ -229,7 +226,6 @@
             display: block;
         }
 
-        /* --- مربع اسم منة مع إضاءة متحركة تلف حوله --- */
         .name-box-wrapper {
             position: relative;
             padding: 3px;
@@ -277,7 +273,6 @@
             letter-spacing: 2px;
         }
 
-        /* الكارد الزجاجي الرئيسي للباسورد */
         .glass-card {
             width: 88%;
             max-width: 380px;
@@ -331,7 +326,7 @@
             letter-spacing: normal;
         }
 
-        button {
+        button.action-btn {
             width: 100%;
             background: linear-gradient(135deg, #ff758c 0%, #ff4b72 100%);
             border: none;
@@ -346,18 +341,14 @@
             letter-spacing: 1.5px;
         }
 
-        button:hover {
+        button.action-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 15px 30px rgba(255, 75, 114, 0.5);
         }
 
-        button:active {
-            transform: scale(0.98);
-        }
-
         .error-msg {
             color: #d63031;
-            font-size: 0.82rem;
+            font-size: 0.825rem;
             margin-top: 12px;
             opacity: 0;
             transition: opacity 0.3s ease;
@@ -376,12 +367,10 @@
     <!-- زرار التشغيل الدائري الشيك أسفل اليسار -->
     <button id="musicToggleBtn" onclick="toggleMusic()">🎵</button>
 
-    <!-- عنصر الصوت المباشر (يشتغل بسلاسة تامة وبدون إعلانات) -->
-    <audio id="bgAudio" loop>
-        <source src="https://www.bensound.com/bensound-music/bensound-tenderness.mp3" type="audio/mp3">
-    </audio>
+    <!-- عنصر الصوت الموجه لملفك الشخصي song.mp3 -->
+    <audio id="bgAudio" src="song.mp3" preload="auto"></audio>
 
-    <!-- شاشة الـ Intro السينمائية: كتابة حرف حرف -->
+    <!-- شاشة الـ Intro السينمائية -->
     <div id="introScreen">
         <div class="intro-title" id="introTitle"></div>
         <div class="surprise-box-wrapper" id="surpriseBox">
@@ -398,7 +387,6 @@
             <span>Special Day For You ✨</span>
         </div>
 
-        <!-- مربع الاسم مع إضاءة متحركة تلف حوله -->
         <div class="name-box-wrapper">
             <div class="name-box-content">
                 <h3>Menna</h3>
@@ -410,25 +398,41 @@
             <div class="input-box">
                 <input type="password" id="passCode" placeholder="Enter Password" autocomplete="off">
             </div>
-            <button onclick="verifyPassword()">Open Surprise</button>
+            <button class="action-btn" onclick="verifyPassword()">Open Surprise</button>
             <div id="errorText" class="error-msg">Incorrect password, try again</div>
         </div>
     </div>
 
     <script>
-        // دالة تشغيل وإيقاف الصوت عبر الدائرة السفلية
         const audio = document.getElementById('bgAudio');
         const musicBtn = document.getElementById('musicToggleBtn');
         let isPlaying = false;
 
+        const START_TIME = 12; // تبدأ من الثانية 12
+        const END_TIME = 90;   // تقف عند دقيقة ونص (90 ثانية)
+
+        // مراقبة وقت الأغنية عشان تقف تلقائياً عند الدقيقة ونص (90 ثانية)
+        audio.addEventListener('timeupdate', () => {
+            if (audio.currentTime >= END_TIME) {
+                audio.pause();
+                audio.currentTime = START_TIME; // ترجع للثانية 12 لو اشتغت تاني
+                isPlaying = false;
+                musicBtn.innerHTML = "🎵";
+                musicBtn.classList.remove('playing');
+            }
+        });
+
         function toggleMusic() {
             if (!isPlaying) {
+                if (audio.currentTime < START_TIME || audio.currentTime >= END_TIME) {
+                    audio.currentTime = START_TIME;
+                }
                 audio.play().then(() => {
                     isPlaying = true;
                     musicBtn.innerHTML = "⏸";
                     musicBtn.classList.add('playing');
                 }).catch(err => {
-                    console.log("Audio play blocked", err);
+                    console.log("Audio play failed:", err);
                 });
             } else {
                 audio.pause();
@@ -438,7 +442,31 @@
             }
         }
 
-        // تأثير كتابة HAPPY BIRTHDAY MENNA حرف حرف
+        // محاولة التشغيل التلقائي من الثانية 12 فور دخول الموقع وتخطي الحظر بأول لمسة للشاشة
+        window.addEventListener('DOMContentLoaded', () => {
+            audio.currentTime = START_TIME;
+            audio.play().then(() => {
+                isPlaying = true;
+                musicBtn.innerHTML = "⏸";
+                musicBtn.classList.add('playing');
+            }).catch(() => {
+                // لو المتصفح حظر التشغيل التلقائي، هتشتغل مع أول ضغطة في أي مكان بالصفحة تلقائياً
+                const unlockAudio = () => {
+                    audio.currentTime = START_TIME;
+                    audio.play().then(() => {
+                        isPlaying = true;
+                        musicBtn.innerHTML = "⏸";
+                        musicBtn.classList.add('playing');
+                        window.removeEventListener('click', unlockAudio);
+                        window.removeEventListener('touchstart', unlockAudio);
+                    }).catch(e => console.log(e));
+                };
+                window.addEventListener('click', unlockAudio);
+                window.addEventListener('touchstart', unlockAudio);
+            });
+        });
+
+        // تأثير كتابة النص حرف حرف
         const textToType = "HAPPY BIRTHDAY MENNA";
         let charIndex = 0;
         const typingSpeed = 70;
@@ -468,7 +496,7 @@
             setTimeout(typeWriter, 500);
         };
 
-        // تأثير القلوب والنجوم المتحركة عبر الـ Canvas
+        // الـ Canvas للقلوب
         const canvas = document.getElementById('heartsCanvas');
         const ctx = canvas.getContext('2d');
 
@@ -535,13 +563,12 @@
         }
         animate();
 
-        // التحقق من الباسورد 2492008 وإيقاف الصوت والدائرة فوراً
+        // التحقق من الباسورد
         function verifyPassword() {
             const pass = document.getElementById('passCode').value;
             const errorText = document.getElementById('errorText');
             
             if (pass === "2492008") {
-                // إيقاف الصوت وإزالة الدائرة فوراً
                 audio.pause();
                 if (musicBtn) musicBtn.remove();
 
