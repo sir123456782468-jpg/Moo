@@ -298,10 +298,10 @@
             opacity: 1;
         }
 
-        /* --- اسم منة ورقم 19 الفخم في السما --- */
+        /* --- اسم منة ورقم 19 الفخم في السما (مع إضاءة ليد نبضية هادئة) --- */
         #skyNameBanner {
             position: absolute;
-            top: 4vh;
+            top: 6vh;
             width: 100%;
             text-align: center;
             z-index: 25;
@@ -322,22 +322,43 @@
             background: linear-gradient(135deg, #ff99bb 0%, #ff4b72 50%, #ffd700 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 30px rgba(255, 75, 114, 0.6);
+            text-shadow: 0 0 30px rgba(255, 75, 114, 0.7), 0 0 60px rgba(255, 143, 163, 0.4);
             letter-spacing: 2px;
-            margin-bottom: -2px;
+            animation: textGlowPulse 3s ease-in-out infinite alternate;
+            margin-bottom: 2px;
         }
 
-        /* تصميم شيك جداً لرقم 19 تحت الاسم */
+        @keyframes textGlowPulse {
+            0% { filter: drop-shadow(0 0 5px rgba(255, 75, 114, 0.4)); }
+            100% { filter: drop-shadow(0 0 20px rgba(255, 182, 193, 0.9)); }
+        }
+
+        .sky-subtitle {
+            font-family: 'Cinzel', serif;
+            color: #ffe3e6;
+            font-size: clamp(0.85rem, 2.8vw, 1.05rem);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-shadow: 0 0 12px rgba(255, 143, 163, 0.8);
+            animation: softPulse 2.5s ease-in-out infinite alternate;
+            margin-top: 4px;
+        }
+
+        @keyframes softPulse {
+            0% { opacity: 0.7; text-shadow: 0 0 8px rgba(255, 143, 163, 0.5); }
+            100% { opacity: 1; text-shadow: 0 0 18px rgba(255, 215, 0, 0.9); }
+        }
+
         .age-badge-wrapper {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             padding: 2px 14px;
             background: linear-gradient(135deg, rgba(255, 75, 114, 0.25), rgba(255, 215, 0, 0.25));
-            border: 1px solid rgba(255, 143, 163, 0.5);
+            border: 1px solid rgba(255, 143, 163, 0.6);
             border-radius: 30px;
-            box-shadow: 0 0 15px rgba(255, 75, 114, 0.3);
-            margin-top: 2px;
+            box-shadow: 0 0 15px rgba(255, 75, 114, 0.4), inset 0 0 10px rgba(255, 215, 0, 0.2);
+            margin-top: 6px;
         }
 
         .age-badge-wrapper span {
@@ -346,13 +367,13 @@
             font-size: clamp(0.9rem, 3vw, 1.1rem);
             font-weight: 700;
             letter-spacing: 2px;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
         }
 
-        /* --- حاوية الجمل (مرتبة ومضبوطة بالكامل للموبايل) --- */
+        /* --- حاوية الجمل (مرفوعة لفوق بمسافة آمنة ومنسقة) --- */
         #messagesWrapper {
             position: absolute;
-            bottom: 3vh;
+            bottom: 6vh; /* مرفوعة لفوق عشان تبعد عن اخر الشاشة */
             width: 92%;
             max-width: 400px;
             display: flex;
@@ -363,7 +384,7 @@
             transform: translateY(20px);
             pointer-events: none;
             transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-            max-height: 70vh;
+            max-height: 62vh;
             overflow-y: visible;
         }
 
@@ -373,20 +394,29 @@
             pointer-events: auto;
         }
 
+        /* إضاءة ليد هادئة ورومانسية حوالين كروت الجمل */
         .message-line-card {
             background: rgba(25, 0, 15, 0.88);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 143, 163, 0.4);
+            border: 1px solid rgba(255, 143, 163, 0.5);
             border-radius: 14px;
             padding: 10px 14px;
             text-align: center;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.5), 0 0 12px rgba(255, 75, 114, 0.15);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6), 
+                        0 0 15px rgba(255, 75, 114, 0.25), 
+                        inset 0 0 10px rgba(255, 143, 163, 0.1);
             opacity: 0;
             transform: translateY(10px) scale(0.96);
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             display: flex;
             align-items: center;
             justify-content: center;
+            animation: ledGlowSoft 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes ledGlowSoft {
+            0% { box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6), 0 0 12px rgba(255, 75, 114, 0.2), inset 0 0 8px rgba(255, 143, 163, 0.1); }
+            100% { box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6), 0 0 22px rgba(255, 143, 163, 0.45), inset 0 0 15px rgba(255, 182, 193, 0.25); }
         }
 
         .message-line-card.visible {
@@ -398,9 +428,9 @@
             font-family: 'Cairo', sans-serif;
             font-weight: 600;
             color: #ffe3e6;
-            font-size: clamp(0.95rem, 3.4vw, 1.15rem); /* خط واضح وكبير ومناسب للموبايل */
+            font-size: clamp(0.95rem, 3.4vw, 1.15rem);
             line-height: 1.4;
-            text-shadow: 0 0 10px rgba(255, 143, 163, 0.4);
+            text-shadow: 0 0 10px rgba(255, 143, 163, 0.5);
             direction: rtl;
         }
 
@@ -410,7 +440,7 @@
             color: #ffd700;
             font-weight: 700;
             letter-spacing: 1px;
-            text-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
+            text-shadow: 0 0 12px rgba(255, 215, 0, 0.7);
             direction: ltr;
             display: inline-block;
         }
@@ -453,9 +483,10 @@
         </div>
     </div>
 
-    <!-- اسم منة ورقم 19 الفخم في السما -->
+    <!-- اسم منة ورقم 19 الفخم في السما مع إضاءة ليد متوهجة -->
     <div id="skyNameBanner">
         <h1>Menna</h1>
+        <div class="sky-subtitle">Happy Birthday To You ✨</div>
         <div class="age-badge-wrapper">
             <span>✨ 19th Birthday ✨</span>
         </div>
