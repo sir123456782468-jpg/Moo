@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Birthday Menna - Pastel Edition</title>
-    <!-- أرقى وأفخم خطوط جوجل العالمية -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Birthday Menna - Magical Edition</title>
+    <!-- خطوط جوجل المتناسقة -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Great+Vibes&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -17,8 +17,8 @@
             width: 100vw;
             height: 100vh;
             overflow: hidden;
-            background: radial-gradient(circle at center, #fff5f8 0%, #ffe6f0 100%);
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: radial-gradient(circle at center, #1a0013 0%, #0d0009 100%);
+            font-family: 'Cairo', sans-serif;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -36,69 +36,6 @@
             pointer-events: none;
         }
 
-        .ambient-glow {
-            position: absolute;
-            width: 75vw;
-            height: 75vw;
-            max-width: 550px;
-            max-height: 550px;
-            background: radial-gradient(circle, rgba(255, 182, 193, 0.45) 0%, rgba(255, 223, 186, 0.25) 50%, rgba(255, 255, 255, 0) 75%);
-            border-radius: 50%;
-            z-index: 2;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation: pulseGlow 7s ease-in-out infinite alternate;
-        }
-
-        @keyframes pulseGlow {
-            0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.6; }
-            100% { transform: translate(-50%, -50%) scale(1.35); opacity: 1; }
-        }
-
-        /* --- زر تشغيل الموسيقى (دائرة أنيقة ومضيئة أسفل اليسار) --- */
-        #musicToggleBtn {
-            position: fixed;
-            bottom: 25px;
-            left: 25px;
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.9);
-            border: 2px solid rgba(255, 182, 193, 0.8);
-            color: #c72c5c;
-            font-size: 1.4rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            z-index: 50;
-            box-shadow: 0 10px 25px rgba(199, 44, 92, 0.25);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            animation: pulseBtn 2s infinite ease-in-out;
-        }
-
-        @keyframes pulseBtn {
-            0% { box-shadow: 0 0 0 0 rgba(255, 75, 114, 0.4); }
-            70% { box-shadow: 0 0 0 15px rgba(255, 75, 114, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 75, 114, 0); }
-        }
-
-        #musicToggleBtn:hover {
-            transform: scale(1.1);
-            background: #ff4b72;
-            color: #fff;
-            border-color: #ff4b72;
-        }
-
-        #musicToggleBtn.playing {
-            background: #ff4b72;
-            color: #fff;
-            border-color: #ff4b72;
-            animation: none;
-        }
-
         /* --- شاشة الـ Intro السينمائية --- */
         #introScreen {
             position: absolute;
@@ -107,7 +44,7 @@
             width: 100%;
             height: 100%;
             z-index: 30;
-            background: radial-gradient(circle at center, #fff0f5 0%, #ffe0ec 100%);
+            background: radial-gradient(circle at center, #25001a 0%, #0d0009 100%);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -121,10 +58,10 @@
             font-family: 'Cinzel', serif;
             font-size: clamp(1.4rem, 4.8vw, 2.6rem);
             font-weight: 700;
-            color: #d84373;
+            color: #ff8fa3;
             letter-spacing: 3.5px;
             text-transform: uppercase;
-            text-shadow: 0 0 20px rgba(216, 67, 115, 0.2);
+            text-shadow: 0 0 20px rgba(255, 143, 163, 0.4);
             margin-bottom: 25px;
             min-height: 1.5em;
         }
@@ -139,7 +76,7 @@
             transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
             width: 90%;
             max-width: 360px;
-            box-shadow: 0 15px 35px rgba(216, 67, 115, 0.15);
+            box-shadow: 0 15px 35px rgba(255, 75, 114, 0.2);
         }
 
         .surprise-box-wrapper.show {
@@ -154,7 +91,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: conic-gradient(from 0deg, transparent, rgba(255, 182, 193, 0.3), #ff9ebb, #ffb6c1, #ffd700, transparent 65%);
+            background: conic-gradient(from 0deg, transparent, rgba(255, 182, 193, 0.3), #ff4b72, #ffd700, transparent 65%);
             animation: rotateGlow 4.5s linear infinite;
         }
 
@@ -165,9 +102,8 @@
 
         .surprise-box-content {
             position: relative;
-            background: rgba(255, 255, 255, 0.92);
+            background: rgba(20, 0, 12, 0.85);
             backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
             padding: 20px 28px;
             border-radius: 22px;
             z-index: 2;
@@ -176,12 +112,12 @@
 
         .surprise-box-content p {
             font-size: clamp(0.95rem, 3.2vw, 1.15rem);
-            color: #c72c5c;
+            color: #ffb3c6;
             font-weight: 600;
             letter-spacing: 1.5px;
         }
 
-        /* --- الصفحة الرئيسية --- */
+        /* --- الصفحة الرئيسية وقسم الباسورد --- */
         .main-container {
             position: relative;
             width: 100%;
@@ -205,24 +141,26 @@
         .top-header {
             width: 100%;
             text-align: center;
+            z-index: 10;
+            transition: opacity 0.5s ease;
         }
 
         .top-header h2 {
             font-family: 'Cinzel', serif;
             font-size: clamp(1.5rem, 5vw, 2.5rem);
             font-weight: 700;
-            color: #c72c5c;
+            color: #ff8fa3;
             letter-spacing: 3.5px;
             text-transform: uppercase;
-            text-shadow: 0 0 20px rgba(199, 44, 92, 0.15);
+            text-shadow: 0 0 20px rgba(255, 143, 163, 0.4);
             margin-bottom: 2px;
         }
 
         .top-header span {
             font-family: 'Great Vibes', cursive;
             font-size: clamp(1.2rem, 3.8vw, 2rem);
-            color: #e0568c;
-            text-shadow: 0 0 10px rgba(224, 86, 140, 0.2);
+            color: #ffb3c6;
+            text-shadow: 0 0 10px rgba(255, 179, 198, 0.4);
             display: block;
         }
 
@@ -234,8 +172,10 @@
             width: 82%;
             max-width: 320px;
             margin: 1vh 0;
-            box-shadow: 0 15px 35px rgba(216, 67, 115, 0.15);
+            box-shadow: 0 15px 35px rgba(255, 75, 114, 0.2);
             animation: floatBox 3.5s ease-in-out infinite alternate;
+            z-index: 10;
+            transition: opacity 0.5s ease;
         }
 
         @keyframes floatBox {
@@ -250,15 +190,14 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: conic-gradient(from 0deg, transparent, rgba(255, 182, 193, 0.3), #ff9ebb, #ffb6c1, #ffd700, transparent 65%);
+            background: conic-gradient(from 0deg, transparent, rgba(255, 182, 193, 0.3), #ff4b72, #ffd700, transparent 65%);
             animation: rotateGlow 4.5s linear infinite;
         }
 
         .name-box-content {
             position: relative;
-            background: rgba(255, 255, 255, 0.92);
+            background: rgba(20, 0, 12, 0.85);
             backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
             padding: 16px 20px;
             border-radius: 22px;
             z-index: 2;
@@ -268,8 +207,8 @@
         .name-box-content h3 {
             font-family: 'Great Vibes', cursive;
             font-size: clamp(2rem, 6vw, 2.8rem);
-            color: #c72c5c;
-            text-shadow: 0 0 15px rgba(199, 44, 92, 0.2);
+            color: #ffb3c6;
+            text-shadow: 0 0 15px rgba(255, 179, 198, 0.4);
             letter-spacing: 2px;
         }
 
@@ -277,20 +216,21 @@
             width: 88%;
             max-width: 380px;
             padding: 32px 26px;
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(25, 0, 15, 0.75);
             backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border: 1px solid rgba(255, 182, 193, 0.5);
+            border: 1px solid rgba(255, 143, 163, 0.3);
             border-radius: 28px;
-            box-shadow: 0 25px 50px rgba(199, 44, 92, 0.12), 
-                        inset 0 1px 0 rgba(255, 255, 255, 1);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 
+                        inset 0 1px 0 rgba(255, 255, 255, 0.1);
             text-align: center;
+            z-index: 10;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .card-title {
             font-family: 'Cinzel', serif;
             font-size: 1.35rem;
-            color: #881437;
+            color: #ff8fa3;
             margin-bottom: 18px;
             letter-spacing: 2px;
         }
@@ -303,10 +243,10 @@
         input[type="password"] {
             width: 100%;
             padding: 14px 20px;
-            background: rgba(255, 240, 245, 0.6);
-            border: 1px solid rgba(255, 182, 193, 0.7);
+            background: rgba(40, 0, 25, 0.6);
+            border: 1px solid rgba(255, 143, 163, 0.4);
             border-radius: 40px;
-            color: #4a0e1c;
+            color: #fff;
             font-size: 1rem;
             text-align: center;
             outline: none;
@@ -315,13 +255,13 @@
         }
 
         input[type="password"]:focus {
-            border-color: #c72c5c;
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 0 20px rgba(199, 44, 92, 0.2);
+            border-color: #ff4b72;
+            background: rgba(50, 0, 30, 0.9);
+            box-shadow: 0 0 20px rgba(255, 75, 114, 0.4);
         }
 
         input::placeholder {
-            color: rgba(199, 44, 92, 0.45);
+            color: rgba(255, 143, 163, 0.4);
             font-weight: 300;
             letter-spacing: normal;
         }
@@ -343,11 +283,11 @@
 
         button.action-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 15px 30px rgba(255, 75, 114, 0.5);
+            box-shadow: 0 15px 30px rgba(255, 75, 114, 0.6);
         }
 
         .error-msg {
-            color: #d63031;
+            color: #ff6b6b;
             font-size: 0.825rem;
             margin-top: 12px;
             opacity: 0;
@@ -357,18 +297,114 @@
         .error-msg.show {
             opacity: 1;
         }
+
+        /* --- اسم منة الفخم في السما --- */
+        #skyNameBanner {
+            position: absolute;
+            top: 7%;
+            width: 100%;
+            text-align: center;
+            z-index: 25;
+            opacity: 0;
+            transform: scale(0.5) translateY(-30px);
+            transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: none;
+        }
+
+        #skyNameBanner.show {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+
+        #skyNameBanner h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(2.8rem, 9vw, 5rem);
+            background: linear-gradient(135deg, #ff99bb 0%, #ff4b72 50%, #ffd700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 35px rgba(255, 75, 114, 0.6);
+            letter-spacing: 3px;
+        }
+
+        #skyNameBanner p {
+            font-family: 'Cinzel', serif;
+            color: #ffe3e6;
+            font-size: clamp(0.8rem, 2.5vw, 1rem);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-top: -5px;
+            text-shadow: 0 0 15px rgba(255, 143, 163, 0.8);
+        }
+
+        /* --- حاوية الجمل (مرتبة تحت بعضها بشكل شيك في الموبايل) --- */
+        #messagesWrapper {
+            position: absolute;
+            bottom: 4vh;
+            width: 90%;
+            max-width: 420px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 25;
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        #messagesWrapper.show {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .message-line-card {
+            background: rgba(25, 0, 15, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 143, 163, 0.4);
+            border-radius: 16px;
+            padding: 11px 16px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5), 0 0 15px rgba(255, 75, 114, 0.15);
+            opacity: 0;
+            transform: translateY(12px) scale(0.96);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            min-height: 46px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .message-line-card.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .message-text {
+            font-family: 'Cairo', sans-serif;
+            font-weight: 600;
+            color: #ffe3e6;
+            font-size: clamp(0.9rem, 3vw, 1.1rem);
+            line-height: 1.5;
+            text-shadow: 0 0 10px rgba(255, 143, 163, 0.4);
+            direction: rtl;
+        }
+
+        /* ستايل النص الإنجليزي بلون ذهبي لامع ومميز */
+        .eng-text {
+            font-family: 'Cinzel', serif;
+            color: #ffd700;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
+            direction: ltr;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
 
-    <div class="ambient-glow"></div>
-    <canvas id="heartsCanvas"></canvas>
-
-    <!-- زرار التشغيل الدائري الشيك أسفل اليسار -->
-    <button id="musicToggleBtn" onclick="toggleMusic()">🎵</button>
-
-    <!-- عنصر الصوت الموجه لملفك الشخصي song.mp3 -->
-    <audio id="bgAudio" src="song.mp3" preload="auto"></audio>
+    <canvas id="fireworksCanvas"></canvas>
 
     <!-- شاشة الـ Intro السينمائية -->
     <div id="introScreen">
@@ -380,20 +416,20 @@
         </div>
     </div>
 
-    <!-- الصفحة الرئيسية -->
+    <!-- الصفحة الرئيسية وباسورد الدخول -->
     <div class="main-container" id="mainContainer">
-        <div class="top-header">
+        <div class="top-header" id="topHeader">
             <h2>Birthday Menna</h2>
             <span>Special Day For You ✨</span>
         </div>
 
-        <div class="name-box-wrapper">
+        <div class="name-box-wrapper" id="nameBoxWrapper">
             <div class="name-box-content">
                 <h3>Menna</h3>
             </div>
         </div>
 
-        <div class="glass-card">
+        <div class="glass-card" id="loginCard">
             <div class="card-title">Enter Password</div>
             <div class="input-box">
                 <input type="password" id="passCode" placeholder="Enter Password" autocomplete="off">
@@ -403,79 +439,25 @@
         </div>
     </div>
 
+    <!-- اسم منة الفخم في السما -->
+    <div id="skyNameBanner">
+        <h1>Menna</h1>
+        <p>Happy Birthday To You ✨</p>
+    </div>
+
+    <!-- حاوية الجمل -->
+    <div id="messagesWrapper"></div>
+
     <script>
-        const audio = document.getElementById('bgAudio');
-        const musicBtn = document.getElementById('musicToggleBtn');
-        let isPlaying = false;
-
-        const START_TIME = 12; // تبدأ من الثانية 12
-        const END_TIME = 90;   // تقف عند دقيقة ونص (90 ثانية)
-
-        // مراقبة وقت الأغنية عشان تقف تلقائياً عند الدقيقة ونص (90 ثانية)
-        audio.addEventListener('timeupdate', () => {
-            if (audio.currentTime >= END_TIME) {
-                audio.pause();
-                audio.currentTime = START_TIME; // ترجع للثانية 12 لو اشتغت تاني
-                isPlaying = false;
-                musicBtn.innerHTML = "🎵";
-                musicBtn.classList.remove('playing');
-            }
-        });
-
-        function toggleMusic() {
-            if (!isPlaying) {
-                if (audio.currentTime < START_TIME || audio.currentTime >= END_TIME) {
-                    audio.currentTime = START_TIME;
-                }
-                audio.play().then(() => {
-                    isPlaying = true;
-                    musicBtn.innerHTML = "⏸";
-                    musicBtn.classList.add('playing');
-                }).catch(err => {
-                    console.log("Audio play failed:", err);
-                });
-            } else {
-                audio.pause();
-                isPlaying = false;
-                musicBtn.innerHTML = "🎵";
-                musicBtn.classList.remove('playing');
-            }
-        }
-
-        // محاولة التشغيل التلقائي من الثانية 12 فور دخول الموقع وتخطي الحظر بأول لمسة للشاشة
-        window.addEventListener('DOMContentLoaded', () => {
-            audio.currentTime = START_TIME;
-            audio.play().then(() => {
-                isPlaying = true;
-                musicBtn.innerHTML = "⏸";
-                musicBtn.classList.add('playing');
-            }).catch(() => {
-                // لو المتصفح حظر التشغيل التلقائي، هتشتغل مع أول ضغطة في أي مكان بالصفحة تلقائياً
-                const unlockAudio = () => {
-                    audio.currentTime = START_TIME;
-                    audio.play().then(() => {
-                        isPlaying = true;
-                        musicBtn.innerHTML = "⏸";
-                        musicBtn.classList.add('playing');
-                        window.removeEventListener('click', unlockAudio);
-                        window.removeEventListener('touchstart', unlockAudio);
-                    }).catch(e => console.log(e));
-                };
-                window.addEventListener('click', unlockAudio);
-                window.addEventListener('touchstart', unlockAudio);
-            });
-        });
-
-        // تأثير كتابة النص حرف حرف
+        // تأثير الكتابة في الـ Intro
         const textToType = "HAPPY BIRTHDAY MENNA";
         let charIndex = 0;
-        const typingSpeed = 70;
 
-        function typeWriter() {
+        function typeWriterIntro() {
             if (charIndex < textToType.length) {
                 document.getElementById('introTitle').innerHTML += textToType.charAt(charIndex);
                 charIndex++;
-                setTimeout(typeWriter, typingSpeed);
+                setTimeout(typeWriterIntro, 70);
             } else {
                 setTimeout(() => {
                     document.getElementById('surpriseBox').classList.add('show');
@@ -493,11 +475,11 @@
         }
 
         window.onload = () => {
-            setTimeout(typeWriter, 500);
+            setTimeout(typeWriterIntro, 500);
         };
 
-        // الـ Canvas للقلوب
-        const canvas = document.getElementById('heartsCanvas');
+        // --- محرك الألعاب النارية ---
+        const canvas = document.getElementById('fireworksCanvas');
         const ctx = canvas.getContext('2d');
 
         function initCanvas() {
@@ -507,81 +489,215 @@
         initCanvas();
         window.addEventListener('resize', initCanvas);
 
-        const hearts = [];
-        class FloatingHeart {
-            constructor() {
-                this.reset();
+        let fireworksEnabled = false;
+        const particles = [];
+        const fireworks = [];
+
+        class Firework {
+            constructor(x, y, targetX, targetY) {
+                this.x = x;
+                this.y = y;
+                this.targetX = targetX;
+                this.targetY = targetY;
+                this.coordinates = [];
+                this.angle = Math.atan2(targetY - y, targetX - x);
+                this.speed = 5;
+                this.accel = 1.05;
+                this.brightness = Math.random() * 50 + 50;
+                this.hue = Math.random() * 60 + 320; 
             }
-            reset() {
-                this.x = Math.random() * canvas.width;
-                this.y = canvas.height + 50;
-                this.size = Math.random() * 12 + 6;
-                this.speedY = Math.random() * 0.7 + 0.3;
-                this.speedX = (Math.random() - 0.5) * 0.4;
-                this.opacity = Math.random() * 0.5 + 0.3;
-                this.angle = Math.random() * Math.PI * 2;
-                this.spin = (Math.random() - 0.5) * 0.015;
-            }
-            update() {
-                this.y -= this.speedY;
-                this.x += this.speedX;
-                this.angle += this.spin;
-                if (this.y < -40) {
-                    this.reset();
+            update(index) {
+                this.coordinates.pop();
+                this.coordinates.unshift([this.x, this.y]);
+                this.speed *= this.accel;
+                let vx = Math.cos(this.angle) * this.speed;
+                let vy = Math.sin(this.angle) * this.speed;
+                
+                if (Math.hypot(this.targetX - this.x, this.targetY - this.y) < this.speed) {
+                    createParticles(this.targetX, this.targetY, this.hue);
+                    fireworks.splice(index, 1);
+                } else {
+                    this.x += vx;
+                    this.y += vy;
                 }
             }
             draw() {
-                ctx.save();
-                ctx.translate(this.x, this.y);
-                ctx.rotate(this.angle);
-                ctx.globalAlpha = this.opacity;
-                ctx.fillStyle = '#ff4b72';
-                
                 ctx.beginPath();
-                let d = this.size;
-                ctx.moveTo(0, d / 4);
-                ctx.bezierCurveTo(0, 0, -d / 2, 0, -d / 2, d / 4);
-                ctx.bezierCurveTo(-d / 2, d / 2, 0, d * 0.75, 0, d);
-                ctx.bezierCurveTo(0, d * 0.75, d / 2, d / 2, d / 2, d / 4);
-                ctx.bezierCurveTo(d / 2, 0, 0, 0, 0, d / 4);
-                ctx.fill();
-                ctx.restore();
+                ctx.moveTo(this.coordinates[this.coordinates.length - 1][0], this.coordinates[this.coordinates.length - 1][1]);
+                ctx.lineTo(this.x, this.y);
+                ctx.strokeStyle = `hsl(${this.hue}, 100%, ${this.brightness}%)`;
+                ctx.stroke();
             }
         }
 
-        for (let i = 0; i < 35; i++) {
-            hearts.push(new FloatingHeart());
+        class Particle {
+            constructor(x, y, hue) {
+                this.x = x;
+                this.y = y;
+                this.coordinates = [];
+                for (let i = 0; i < 5; i++) {
+                    this.coordinates.push([this.x, this.y]);
+                }
+                this.angle = Math.random() * Math.PI * 2;
+                this.speed = Math.random() * 10 + 2;
+                this.friction = 0.95;
+                this.gravity = 1;
+                this.hue = hue;
+                this.brightness = Math.random() * 50 + 50;
+                this.alpha = 1;
+                this.decay = Math.random() * 0.015 + 0.015;
+            }
+            update(index) {
+                this.coordinates.pop();
+                this.coordinates.unshift([this.x, this.y]);
+                this.speed *= this.friction;
+                this.x += Math.cos(this.angle) * this.speed;
+                this.y += Math.sin(this.angle) * this.speed + this.gravity;
+                this.alpha -= this.decay;
+                if (this.alpha <= this.decay) {
+                    particles.splice(index, 1);
+                }
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.moveTo(this.coordinates[this.coordinates.length - 1][0], this.coordinates[this.coordinates.length - 1][1]);
+                ctx.lineTo(this.x, this.y);
+                ctx.strokeStyle = `hsla(${this.hue}, 100%, ${this.brightness}%, ${this.alpha})`;
+                ctx.stroke();
+            }
         }
 
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            hearts.forEach(h => {
-                h.update();
-                h.draw();
-            });
-            requestAnimationFrame(animate);
+        function createParticles(x, y, hue) {
+            let particleCount = 40;
+            while (particleCount--) {
+                particles.push(new Particle(x, y, hue));
+            }
         }
-        animate();
 
-        // التحقق من الباسورد
+        let timer = 0;
+        function animateFireworks() {
+            requestAnimationFrame(animateFireworks);
+            ctx.fillStyle = 'rgba(13, 0, 9, 0.2)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            let i = fireworks.length;
+            while (i--) {
+                fireworks[i].update(i);
+                fireworks[i].draw();
+            }
+
+            let j = particles.length;
+            while (j--) {
+                particles[j].update(j);
+                particles.draw ? particles[j].draw() : null; // حماية ضد الأخطاء
+            }
+
+            if (fireworksEnabled && timer++ % 35 === 0) {
+                let startX = canvas.width / 2;
+                let startY = canvas.height;
+                let targetX = Math.random() * canvas.width * 0.8 + canvas.width * 0.1;
+                let targetY = Math.random() * canvas.height * 0.45;
+                fireworks.push(new Firework(startX, startY, targetX, targetY));
+            }
+        }
+        animateFireworks();
+
+        // الجمل المطلوبة
+        const messageLines = [
+            "<span class='eng-text'>Happy Birthday Menna ❤️</span>",
+            "كل سنه وانتي طيبه يا احلي من تم 19 ❤️",
+            "ربنا يديمك ف حياتي يا منه ❤️",
+            "اتمني تكوني فرحتي بالحاجه الصغيره دي ❤️",
+            "<span class='eng-text'>Menna 1️⃣9️⃣ ✨</span>"
+        ];
+
+        let msgIndex = 0;
+
+        // دالة الكتابة حرف حرف داخل الكروت المرتبة تحت بعضها
+        function displayNextMessageLine() {
+            if (msgIndex >= messageLines.length) return;
+
+            const wrapper = document.getElementById('messagesWrapper');
+            
+            // إنشاء كارت جديد لكل جملة
+            const card = document.createElement('div');
+            card.className = 'message-line-card';
+            
+            const textDiv = document.createElement('div');
+            textDiv.className = 'message-text';
+            card.appendChild(textDiv);
+            wrapper.appendChild(card);
+
+            // إظهار الكارت بحركة انسيابية
+            setTimeout(() => {
+                card.classList.add('visible');
+            }, 50);
+
+            // تجهيز النص وإزالة الـ HTML tags مؤقتاً لحساب الحروف وتأثير الـ Typewriter
+            const fullHtml = messageLines[msgIndex];
+            
+            // لو الجملة فيها span إنجليزي بنعاملها ككتلة واحدة أو بنكتبها بشكل ذكي
+            if (fullHtml.includes('eng-text')) {
+                // عرض النص الإنجليزي المميز مباشرة بشكل احترافي
+                let currentText = "";
+                let htmlChars = fullHtml;
+                let charCounter = 0;
+                
+                function typeHtml() {
+                    if (charCounter <= htmlChars.length) {
+                        textDiv.innerHTML = htmlChars.substring(0, charCounter);
+                        charCounter += 2; // سرعة مناسبة للنص الجاهز
+                        setTimeout(typeHtml, 35);
+                    } else {
+                        textDiv.innerHTML = htmlChars;
+                        msgIndex++;
+                        setTimeout(displayNextMessageLine, 800);
+                    }
+                }
+                setTimeout(typeHtml, 200);
+
+            } else {
+                // كتابة الجمل العربية حرف بحرف (Typewriter Effect)
+                let charPos = 0;
+                function typeArabic() {
+                    if (charPos <= fullHtml.length) {
+                        textDiv.innerHTML = fullHtml.substring(0, charPos);
+                        charPos++;
+                        setTimeout(typeArabic, 45); // سرعة كتابة الحروف العربية
+                    } else {
+                        msgIndex++;
+                        setTimeout(displayNextMessageLine, 800); // الانتقال للجملة اللي بعدها
+                    }
+                }
+                setTimeout(typeArabic, 200);
+            }
+        }
+
+        // التحقق من الباسورد (2492007)
         function verifyPassword() {
-            const pass = document.getElementById('passCode').value;
+            const pass = document.exit ? "" : document.getElementById('passCode').value;
             const errorText = document.getElementById('errorText');
             
-            if (pass === "2492008") {
-                audio.pause();
-                if (musicBtn) musicBtn.remove();
+            if (pass === "2492007") {
+                fireworksEnabled = true;
 
-                document.querySelector('.glass-card').style.transform = "scale(1.04)";
-                document.querySelector('.glass-card').style.opacity = "0";
-                document.querySelector('.top-header').style.opacity = "0";
-                document.querySelector('.name-box-wrapper').style.opacity = "0";
+                const loginCard = document.getElementById('loginCard');
+                loginCard.style.transform = "scale(0.8)";
+                loginCard.style.opacity = "0";
+                loginCard.style.pointerEvents = "none";
+                
+                document.getElementById('topHeader').style.opacity = "0";
+                document.getElementById('nameBoxWrapper').style.opacity = "0";
+
                 setTimeout(() => {
-                    alert("Welcome Menna ✨ Your Special Surprise Unlocked!");
-                }, 400);
+                    document.getElementById('skyNameBanner').classList.add('show');
+                    document.getElementById('messagesWrapper').classList.add('show');
+                    displayNextMessageLine(); // بدء عرض الكروت حرف حرف تحت بعضها
+                }, 500);
+
             } else {
                 errorText.classList.add('show');
-                const card = document.querySelector('.glass-card');
+                const card = document.getElementById('loginCard');
                 card.style.transform = "translateX(10px)";
                 setTimeout(() => card.style.transform = "translateX(-10px)", 90);
                 setTimeout(() => card.style.transform = "translateX(0)", 180);
