@@ -333,7 +333,7 @@
         /* --- اسم منة ورقم 19 في السما --- */
         #skyNameBanner {
             position: absolute;
-            top: 5vh;
+            top: 4vh;
             width: 100%;
             text-align: center;
             z-index: 25;
@@ -402,23 +402,23 @@
             letter-spacing: 2px;
         }
 
-        /* --- حاوية الجمل الأواخر --- */
+        /* --- حاوية الجمل الأواخر (مرفوعة لفوق شوية ومظبوطة) --- */
         #messagesWrapper {
             position: absolute;
-            bottom: 3vh;
+            bottom: 2vh;
             width: 92%;
             max-width: 400px;
             display: flex;
             flex-direction: column;
-            gap: 7px;
+            gap: 6px;
             z-index: 25;
             opacity: 0;
             transform: translateY(20px);
             pointer-events: none;
             transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-            max-height: 65vh;
+            max-height: 58vh;
             overflow-y: auto;
-            padding: 5px;
+            padding: 4px;
         }
 
         #messagesWrapper.show {
@@ -431,8 +431,8 @@
             background: rgba(25, 17, 23, 0.88);
             backdrop-filter: blur(25px);
             border: 1.5px solid rgba(244, 114, 182, 0.3);
-            border-radius: 14px;
-            padding: 9px 14px;
+            border-radius: 12px;
+            padding: 8px 12px;
             text-align: center;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), 
                         0 0 15px rgba(244, 114, 182, 0.1), 
@@ -455,8 +455,8 @@
             font-family: 'Cairo', sans-serif;
             font-weight: 700;
             color: #fbcfe8;
-            font-size: clamp(0.9rem, 3vw, 1.1rem);
-            line-height: 1.35;
+            font-size: clamp(0.85rem, 2.8vw, 1.05rem);
+            line-height: 1.3;
             direction: rtl;
         }
 
@@ -590,7 +590,7 @@
                 this.speed = 5;
                 this.accel = 1.05;
                 this.brightness = Math.random() * 20 + 55;
-                this.hue = Math.random() * 25 + 335; // ألوان وردي هادئ وروز ساحر
+                this.hue = Math.random() * 25 + 335;
             }
             update(index) {
                 this.coordinates.pop();
@@ -690,11 +690,10 @@
         }
         animateFireworks();
 
-        // الجمل المطلوبة بالترتيب
+        // الجمل المطلوبة بالترتيب (تمت إزالة Happy Birthday المكررة وتظظبيطها)
         const messageLines = [
             "كل سنة وانتي طيبة وبخير يا منه ❤️",
             "كل سنه وانتي طيبه يا احلي من تم 1️⃣9️⃣",
-            "<span class='eng-text'>Happy Birthday Menna ❤️</span>",
             "ربنا يديمك ف حياتي يا نونا ❤️",
             "<span class='eng-text'>Menna 1️⃣9️⃣</span>",
             "اتمني الحاجه الصغيره دي تفرحك ❤️😂",
@@ -764,7 +763,7 @@
             if (pass === "2492007") {
                 fireworksEnabled = true;
 
-                // تشغيل الأغنية من الدقيقة 1:43 (يعني 103 ثانية)
+                // تشغيل الأغنية من الدقيقة 1:43 وتوقفها عند نهايتها تلقائياً
                 const song = document.getElementById('birthdaySong');
                 song.currentTime = 103; 
                 song.play().catch(e => console.log("Audio play prevented:", e));
