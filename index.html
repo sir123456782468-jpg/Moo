@@ -516,7 +516,13 @@
 </head>
 <body>
 
-    <!-- عنصر الصوت -->
+    <!-- عناصر الصوت -->
+    <!-- الأغنية الأولى: الموسيقى الرومانسية (تبدأ من الثانية 2 وتقفل لما تخلص) -->
+    <audio id="introMusic" preload="auto">
+        <source src="https://serv100.albumaty.com/2025/Albumaty.Com_mnwaat_mwsyki_rwmansyt_mnwaat.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- الأغنية الثانية: أغنية رامي صبري (تشتغل بعد الباسورد) -->
     <audio id="birthdaySong" preload="auto">
         <source src="https://serv100.albumaty.com/song2022/Albumaty.Com_ramy_sbri_kl_snt.mp3" type="audio/mpeg">
     </audio>
@@ -579,6 +585,28 @@
     <div id="messagesWrapper"></div>
 
     <script>
+        // تشغيل الموسيقى الرومانسية الأولى أول ما الموقع يفتح من الثانية 2 وتتقفل لما تخلص
+        window.addEventListener('DOMContentLoaded', () => {
+            const introMusic = document.getElementById('introMusic');
+            introMusic.currentTime = 2;
+            introMusic.play().catch(e => {
+                console.log("Auto-play prevented by browser policy:", e);
+                // محاولة التشغيل مع أي تفاعل في حال منع المتصفح التشغيل التلقائي
+                document.body.addEventListener('click', () => {
+                    if (introMusic.paused) {
+                        introMusic.currentTime = 2;
+                        introMusic.play().catch(err => console.log(err));
+                    }
+                }, { once: true });
+            });
+
+            // التأكد من إيقافها تماماً فور انتهائها
+            introMusic.addEventListener('ended', () => {
+                introMusic.pause();
+                introMusic.currentTime = 0;
+            });
+        });
+
         // تأثير الكتابة في الـ Intro
         const textToType = "HAPPY BIRTHDAY MENNA";
         let charIndex = 0;
@@ -817,7 +845,12 @@
             if (pass === "2492007") {
                 fireworksEnabled = true;
 
-                // تشغيل الأغنية من الدقيقة 1:43 وتوقفها عند نهايتها تلقائياً
+                // 1. إيقاف الأغنية الأولى تماماً فور كتابة الباسورد والضغط
+                const introMusic = document.getElementById('introMusic');
+                introMusic.pause();
+                introMusic.currentTime = 0;
+
+                // 2. تشغيل الأغنية الثانية (رامي صبري) من الدقيقة 1:43 وتوقفها عند نهايتها تلقائياً
                 const song = document.getElementById('birthdaySong');
                 song.currentTime = 103; 
                 song.play().catch(e => console.log("Audio play prevented:", e));
