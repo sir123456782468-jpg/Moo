@@ -18,8 +18,7 @@
             height: 100vh;
             min-height: -webkit-fill-available;
             overflow: hidden;
-            /* خلفية فاتحة ومشرقة وناعمة */
-            background: radial-gradient(circle at center, #fff0f5 0%, #ffe4e1 100%);
+            background: radial-gradient(circle at center, #23161f 0%, #171015 50%, #0d090c 100%);
             font-family: 'Cairo', sans-serif;
             display: flex;
             flex-direction: column;
@@ -29,7 +28,8 @@
             padding: 15px 10px;
         }
 
-        canvas {
+        /* --- زخارف رومانسية رايقة تملى الخلفية بشياكة --- */
+        .romantic-decorations {
             position: absolute;
             top: 0;
             left: 0;
@@ -37,9 +37,40 @@
             height: 100%;
             z-index: 1;
             pointer-events: none;
+            overflow: hidden;
         }
 
-        /* --- شاشة الـ Intro السينمائية الفاتحة --- */
+        .rom-item {
+            position: absolute;
+            font-size: 22px;
+            opacity: 0.35;
+            animation: floatRom 6s ease-in-out infinite alternate;
+            filter: drop-shadow(0 0 10px rgba(244, 114, 182, 0.3));
+        }
+
+        .rom-1 { top: 8%; left: 10%; animation-delay: 0s; }
+        .rom-2 { top: 15%; right: 12%; animation-delay: 1.5s; font-size: 26px; }
+        .rom-3 { bottom: 15%; left: 12%; animation-delay: 3s; font-size: 24px; }
+        .rom-4 { bottom: 10%; right: 15%; animation-delay: 4.5s; }
+        .rom-5 { top: 45%; left: 5%; animation-delay: 2s; font-size: 18px; }
+        .rom-6 { top: 50%; right: 5%; animation-delay: 3.5s; font-size: 18px; }
+
+        @keyframes floatRom {
+            0% { transform: translateY(0px) scale(0.95); opacity: 0.25; }
+            100% { transform: translateY(-12px) scale(1.05); opacity: 0.55; }
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        /* --- شاشة الـ Intro السينمائية الروماّنسية الرايقة --- */
         #introScreen {
             position: absolute;
             top: 0;
@@ -47,7 +78,7 @@
             width: 100%;
             height: 100%;
             z-index: 30;
-            background: radial-gradient(circle at center, #fff0f5 0%, #ffd1dc 100%);
+            background: radial-gradient(circle at center, #261720 0%, #150d12 100%);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -61,10 +92,10 @@
             font-family: 'Cinzel', serif;
             font-size: clamp(1.5rem, 5vw, 2.6rem);
             font-weight: 700;
-            color: #d81b60;
+            color: #f472b6;
             letter-spacing: 3px;
             text-transform: uppercase;
-            text-shadow: 0 0 20px rgba(216, 27, 96, 0.2);
+            text-shadow: 0 0 20px rgba(244, 114, 182, 0.3);
             margin-bottom: 20px;
             min-height: 1.5em;
         }
@@ -79,7 +110,7 @@
             transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
             width: 85%;
             max-width: 340px;
-            box-shadow: 0 15px 35px rgba(216, 27, 96, 0.15);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
         }
 
         .surprise-box-wrapper.show {
@@ -94,7 +125,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: conic-gradient(from 0deg, transparent, rgba(255, 182, 193, 0.5), #ff4b72, #ffd700, transparent 65%);
+            background: conic-gradient(from 0deg, transparent, rgba(244, 114, 182, 0.4), #ec4899, #f472b6, transparent 65%);
             animation: rotateGlow 4.5s linear infinite;
         }
 
@@ -105,7 +136,7 @@
 
         .surprise-box-content {
             position: relative;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(30, 20, 26, 0.85);
             backdrop-filter: blur(20px);
             padding: 18px 24px;
             border-radius: 22px;
@@ -115,12 +146,12 @@
 
         .surprise-box-content p {
             font-size: clamp(1rem, 3.5vw, 1.2rem);
-            color: #c2185b;
+            color: #fbcfe8;
             font-weight: 700;
             letter-spacing: 1.5px;
         }
 
-        /* --- الصفحة الرئيسية وقسم الباسورد الفاتح --- */
+        /* --- الصفحة الرئيسية وقسم الباسورد --- */
         .main-container {
             position: relative;
             width: 100%;
@@ -151,18 +182,18 @@
             font-family: 'Cinzel', serif;
             font-size: clamp(1.6rem, 5.5vw, 2.5rem);
             font-weight: 700;
-            color: #d81b60;
+            color: #f472b6;
             letter-spacing: 3px;
             text-transform: uppercase;
-            text-shadow: 0 0 15px rgba(216, 27, 96, 0.2);
+            text-shadow: 0 0 15px rgba(244, 114, 182, 0.3);
             margin-bottom: 2px;
         }
 
         .top-header span {
             font-family: 'Great Vibes', cursive;
             font-size: clamp(1.3rem, 4vw, 2rem);
-            color: #e91e63;
-            text-shadow: 0 0 10px rgba(233, 30, 99, 0.2);
+            color: #fbcfe8;
+            text-shadow: 0 0 10px rgba(251, 207, 232, 0.2);
             display: block;
         }
 
@@ -173,7 +204,7 @@
             overflow: hidden;
             width: 80%;
             max-width: 300px;
-            box-shadow: 0 15px 35px rgba(216, 27, 96, 0.15);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
             animation: floatBox 3.5s ease-in-out infinite alternate;
             z-index: 10;
             transition: opacity 0.5s ease;
@@ -191,13 +222,13 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: conic-gradient(from 0deg, transparent, rgba(255, 182, 193, 0.5), #ff4b72, #ffd700, transparent 65%);
+            background: conic-gradient(from 0deg, transparent, rgba(244, 114, 182, 0.4), #ec4899, #f472b6, transparent 65%);
             animation: rotateGlow 4.5s linear infinite;
         }
 
         .name-box-content {
             position: relative;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(30, 20, 26, 0.85);
             backdrop-filter: blur(20px);
             padding: 14px 20px;
             border-radius: 22px;
@@ -208,8 +239,8 @@
         .name-box-content h3 {
             font-family: 'Great Vibes', cursive;
             font-size: clamp(2.2rem, 7vw, 3rem);
-            color: #d81b60;
-            text-shadow: 0 0 10px rgba(216, 27, 96, 0.2);
+            color: #f472b6;
+            text-shadow: 0 0 10px rgba(244, 114, 182, 0.3);
             letter-spacing: 2px;
         }
 
@@ -217,12 +248,12 @@
             width: 90%;
             max-width: 360px;
             padding: 28px 22px;
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(25, 17, 23, 0.85);
             backdrop-filter: blur(25px);
-            border: 1px solid rgba(255, 182, 193, 0.6);
+            border: 1.5px solid rgba(244, 114, 182, 0.3);
             border-radius: 28px;
-            box-shadow: 0 25px 50px rgba(216, 27, 96, 0.12), 
-                        inset 0 1px 0 rgba(255, 255, 255, 1);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 
+                        inset 0 1px 0 rgba(255, 255, 255, 0.1);
             text-align: center;
             z-index: 10;
             transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
@@ -231,7 +262,7 @@
         .card-title {
             font-family: 'Cinzel', serif;
             font-size: 1.25rem;
-            color: #d81b60;
+            color: #fbcfe8;
             margin-bottom: 16px;
             letter-spacing: 2px;
         }
@@ -244,10 +275,10 @@
         input[type="password"] {
             width: 100%;
             padding: 13px 18px;
-            background: rgba(255, 240, 245, 0.9);
-            border: 1px solid rgba(255, 143, 163, 0.6);
+            background: rgba(18, 11, 15, 0.9);
+            border: 1.5px solid rgba(244, 114, 182, 0.4);
             border-radius: 40px;
-            color: #880e4f;
+            color: #fbcfe8;
             font-size: 1rem;
             text-align: center;
             outline: none;
@@ -256,20 +287,20 @@
         }
 
         input[type="password"]:focus {
-            border-color: #d81b60;
-            background: #ffffff;
-            box-shadow: 0 0 20px rgba(216, 27, 96, 0.25);
+            border-color: #f472b6;
+            background: rgba(30, 20, 26, 0.95);
+            box-shadow: 0 0 20px rgba(244, 114, 182, 0.25);
         }
 
         input::placeholder {
-            color: rgba(216, 27, 96, 0.4);
+            color: rgba(251, 207, 232, 0.4);
             font-weight: 300;
             letter-spacing: normal;
         }
 
         button.action-btn {
             width: 100%;
-            background: linear-gradient(135deg, #ff758c 0%, #ff4b72 100%);
+            background: linear-gradient(135deg, #db2777 0%, #be185d 100%);
             border: none;
             color: #fff;
             padding: 13px;
@@ -278,17 +309,17 @@
             border-radius: 40px;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 25px rgba(255, 75, 114, 0.35);
+            box-shadow: 0 10px 25px rgba(219, 39, 119, 0.3);
             letter-spacing: 1.5px;
         }
 
         button.action-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 15px 30px rgba(255, 75, 114, 0.6);
+            box-shadow: 0 15px 30px rgba(219, 39, 119, 0.5);
         }
 
         .error-msg {
-            color: #d32f2f;
+            color: #fda4af;
             font-size: 0.825rem;
             margin-top: 10px;
             opacity: 0;
@@ -299,10 +330,10 @@
             opacity: 1;
         }
 
-        /* --- اسم منة ورقم 19 في السما (ألوان فاتحة ومضيئة) --- */
+        /* --- اسم منة ورقم 19 في السما --- */
         #skyNameBanner {
             position: absolute;
-            top: 6vh;
+            top: 5vh;
             width: 100%;
             text-align: center;
             z-index: 25;
@@ -319,30 +350,30 @@
 
         #skyNameBanner h1 {
             font-family: 'Great Vibes', cursive;
-            font-size: clamp(2.4rem, 8vw, 4rem);
-            background: linear-gradient(135deg, #d81b60 0%, #ad1457 50%, #b8860b 100%);
+            font-size: clamp(2.2rem, 7vw, 3.5rem);
+            background: linear-gradient(135deg, #fbcfe8 0%, #f472b6 50%, #db2777 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 25px rgba(216, 27, 96, 0.3);
+            text-shadow: 0 0 25px rgba(244, 114, 182, 0.3);
             letter-spacing: 2px;
             animation: textGlowPulse 3s ease-in-out infinite alternate;
-            margin-bottom: 2px;
+            margin-bottom: 0px;
         }
 
         @keyframes textGlowPulse {
-            0% { filter: drop-shadow(0 0 6px rgba(216, 27, 96, 0.3)); }
-            100% { filter: drop-shadow(0 0 18px rgba(216, 27, 96, 0.6)); }
+            0% { filter: drop-shadow(0 0 6px rgba(244, 114, 182, 0.3)); }
+            100% { filter: drop-shadow(0 0 18px rgba(244, 114, 182, 0.6)); }
         }
 
         .sky-subtitle {
             font-family: 'Cinzel', serif;
-            color: #880e4f;
-            font-size: clamp(0.85rem, 2.8vw, 1.05rem);
-            letter-spacing: 3px;
+            color: #fbcfe8;
+            font-size: clamp(0.8rem, 2.5vw, 0.95rem);
+            letter-spacing: 2px;
             text-transform: uppercase;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
             animation: softPulse 2.5s ease-in-out infinite alternate;
-            margin-top: 4px;
+            margin-top: 2px;
             font-weight: 700;
         }
 
@@ -355,38 +386,39 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 3px 16px;
-            background: rgba(255, 255, 255, 0.85);
-            border: 1px solid rgba(216, 27, 96, 0.4);
+            padding: 2px 12px;
+            background: rgba(30, 20, 26, 0.85);
+            border: 1px solid rgba(244, 114, 182, 0.4);
             border-radius: 30px;
-            box-shadow: 0 0 15px rgba(216, 27, 96, 0.15);
-            margin-top: 6px;
+            box-shadow: 0 0 15px rgba(244, 114, 182, 0.15);
+            margin-top: 4px;
         }
 
         .age-badge-wrapper span {
             font-family: 'Cinzel', serif;
-            color: #ad1457;
-            font-size: clamp(0.9rem, 3vw, 1.1rem);
+            color: #fbcfe8;
+            font-size: clamp(0.8rem, 2.5vw, 1rem);
             font-weight: 700;
             letter-spacing: 2px;
         }
 
-        /* --- حاوية الجمل الأواخر (فاتحة وزجاجية منورة) --- */
+        /* --- حاوية الجمل الأواخر --- */
         #messagesWrapper {
             position: absolute;
-            bottom: 6vh;
+            bottom: 3vh;
             width: 92%;
             max-width: 400px;
             display: flex;
             flex-direction: column;
-            gap: 9px;
+            gap: 7px;
             z-index: 25;
             opacity: 0;
             transform: translateY(20px);
             pointer-events: none;
             transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-            max-height: 62vh;
-            overflow-y: visible;
+            max-height: 65vh;
+            overflow-y: auto;
+            padding: 5px;
         }
 
         #messagesWrapper.show {
@@ -396,31 +428,22 @@
         }
 
         .message-line-card {
-            background: rgba(255, 255, 255, 0.92);
+            background: rgba(25, 17, 23, 0.88);
             backdrop-filter: blur(25px);
-            border: 1.5px solid rgba(255, 182, 193, 0.8);
-            border-radius: 16px;
-            padding: 11px 16px;
+            border: 1.5px solid rgba(244, 114, 182, 0.3);
+            border-radius: 14px;
+            padding: 9px 14px;
             text-align: center;
-            box-shadow: 0 8px 25px rgba(216, 27, 96, 0.12), 
-                        0 0 20px rgba(255, 182, 193, 0.4), 
-                        inset 0 0 15px rgba(255, 255, 255, 1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), 
+                        0 0 15px rgba(244, 114, 182, 0.1), 
+                        inset 0 0 12px rgba(255, 255, 255, 0.03);
             opacity: 0;
             transform: translateY(10px) scale(0.96);
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             display: flex;
             align-items: center;
             justify-content: center;
-            animation: lightBrightLedGlow 3.5s ease-in-out infinite alternate;
-        }
-
-        @keyframes lightBrightLedGlow {
-            0% { 
-                box-shadow: 0 8px 25px rgba(216, 27, 96, 0.1), 0 0 15px rgba(255, 182, 193, 0.3), inset 0 0 12px rgba(255, 255, 255, 0.8); 
-            }
-            100% { 
-                box-shadow: 0 8px 30px rgba(216, 27, 96, 0.2), 0 0 25px rgba(255, 143, 163, 0.7), inset 0 0 20px rgba(255, 255, 255, 1); 
-            }
+            flex-shrink: 0;
         }
 
         .message-line-card.visible {
@@ -431,15 +454,15 @@
         .message-text {
             font-family: 'Cairo', sans-serif;
             font-weight: 700;
-            color: #880e4f;
-            font-size: clamp(1rem, 3.5vw, 1.18rem);
-            line-height: 1.4;
+            color: #fbcfe8;
+            font-size: clamp(0.9rem, 3vw, 1.1rem);
+            line-height: 1.35;
             direction: rtl;
         }
 
         .eng-text {
             font-family: 'Cinzel', serif;
-            color: #c2185b;
+            color: #f472b6;
             font-weight: 700;
             letter-spacing: 1.2px;
             direction: ltr;
@@ -448,6 +471,21 @@
     </style>
 </head>
 <body>
+
+    <!-- عنصر الصوت -->
+    <audio id="birthdaySong" preload="auto">
+        <source src="https://serv100.albumaty.com/song2022/Albumaty.Com_ramy_sbri_kl_snt.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- زخارف رومانسية رايقة تملى الخلفية -->
+    <div class="romantic-decorations">
+        <div class="rom-item rom-1">🌹</div>
+        <div class="rom-item rom-2">💖</div>
+        <div class="rom-item rom-3">✨</div>
+        <div class="rom-item rom-4">🌸</div>
+        <div class="rom-item rom-5">🤍</div>
+        <div class="rom-item rom-6">🌷</div>
+    </div>
 
     <canvas id="fireworksCanvas"></canvas>
 
@@ -526,7 +564,7 @@
             setTimeout(typeWriterIntro, 500);
         };
 
-        // --- محرك الألعاب النارية ---
+        // --- محرك الألعاب النارية برومانسية ---
         const canvas = document.getElementById('fireworksCanvas');
         const ctx = canvas.getContext('2d');
 
@@ -551,8 +589,8 @@
                 this.angle = Math.atan2(targetY - y, targetX - x);
                 this.speed = 5;
                 this.accel = 1.05;
-                this.brightness = Math.random() * 30 + 55;
-                this.hue = Math.random() * 40 + 330; 
+                this.brightness = Math.random() * 20 + 55;
+                this.hue = Math.random() * 25 + 335; // ألوان وردي هادئ وروز ساحر
             }
             update(index) {
                 this.coordinates.pop();
@@ -573,7 +611,7 @@
                 ctx.beginPath();
                 ctx.moveTo(this.coordinates[this.coordinates.length - 1][0], this.coordinates[this.coordinates.length - 1][1]);
                 ctx.lineTo(this.x, this.y);
-                ctx.strokeStyle = `hsl(${this.hue}, 90%, ${this.brightness}%)`;
+                ctx.strokeStyle = `hsl(${this.hue}, 80%, ${this.brightness}%)`;
                 ctx.stroke();
             }
         }
@@ -591,7 +629,7 @@
                 this.friction = 0.95;
                 this.gravity = 1;
                 this.hue = hue;
-                this.brightness = Math.random() * 30 + 60;
+                this.brightness = Math.random() * 20 + 55;
                 this.alpha = 1;
                 this.decay = Math.random() * 0.015 + 0.015;
             }
@@ -610,7 +648,7 @@
                 ctx.beginPath();
                 ctx.moveTo(this.coordinates[this.coordinates.length - 1][0], this.coordinates[this.coordinates.length - 1][1]);
                 ctx.lineTo(this.x, this.y);
-                ctx.strokeStyle = `hsla(${this.hue}, 90%, ${this.brightness}%, ${this.alpha})`;
+                ctx.strokeStyle = `hsla(${this.hue}, 80%, ${this.brightness}%, ${this.alpha})`;
                 ctx.stroke();
             }
         }
@@ -625,7 +663,7 @@
         let timer = 0;
         function animateFireworks() {
             requestAnimationFrame(animateFireworks);
-            ctx.fillStyle = 'rgba(255, 240, 245, 0.2)';
+            ctx.fillStyle = 'rgba(19, 12, 17, 0.25)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
             let i = fireworks.length;
@@ -637,20 +675,22 @@
             let j = particles.length;
             while (j--) {
                 particles[j].update(j);
-                particles.draw ? particles[j].draw() : null;
+                particles[j].draw();
             }
 
-            if (fireworksEnabled && timer++ % 35 === 0) {
-                let startX = canvas.width / 2;
-                let startY = canvas.height;
-                let targetX = Math.random() * canvas.width * 0.8 + canvas.width * 0.1;
-                let targetY = Math.random() * canvas.height * 0.45;
-                fireworks.push(new Firework(startX, startY, targetX, targetY));
+            if (fireworksEnabled) {
+                if (timer++ % 35 === 0) {
+                    let startX = canvas.width / 2;
+                    let startY = canvas.height;
+                    let targetX = Math.random() * canvas.width * 0.8 + canvas.width * 0.1;
+                    let targetY = Math.random() * canvas.height * 0.45;
+                    fireworks.push(new Firework(startX, startY, targetX, targetY));
+                }
             }
         }
         animateFireworks();
 
-        // الجمل المطلوبة بالترتيب وجملتك الجديدة في الآخر تماماً
+        // الجمل المطلوبة بالترتيب
         const messageLines = [
             "كل سنة وانتي طيبة وبخير يا منه ❤️",
             "كل سنه وانتي طيبه يا احلي من تم 1️⃣9️⃣",
@@ -678,6 +718,7 @@
 
             setTimeout(() => {
                 card.classList.add('visible');
+                wrapper.scrollTop = wrapper.scrollHeight;
             }, 50);
 
             const fullHtml = messageLines[msgIndex];
@@ -723,10 +764,15 @@
             if (pass === "2492007") {
                 fireworksEnabled = true;
 
+                // تشغيل الأغنية من الدقيقة 1:43 (يعني 103 ثانية)
+                const song = document.getElementById('birthdaySong');
+                song.currentTime = 103; 
+                song.play().catch(e => console.log("Audio play prevented:", e));
+
                 const loginCard = document.getElementById('loginCard');
                 loginCard.style.transform = "scale(0.8)";
                 loginCard.style.opacity = "0";
-                loginCard.style.pointerEvents = "none";
+                loginCard.style.pointerEvents.none;
                 
                 document.getElementById('topHeader').style.opacity = "0";
                 document.getElementById('nameBoxWrapper').style.opacity = "0";
