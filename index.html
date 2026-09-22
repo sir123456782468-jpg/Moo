@@ -625,7 +625,6 @@
         let timer = 0;
         function animateFireworks() {
             requestAnimationFrame(animateFireworks);
-            // مسح الخلفية بتأثير خفيف متناسب مع التصميم الفاتح
             ctx.fillStyle = 'rgba(255, 240, 245, 0.2)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -651,14 +650,15 @@
         }
         animateFireworks();
 
-        // الجمل المطلوبة بالترتيب
+        // الجمل المطلوبة بالترتيب وجملتك الجديدة في الآخر تماماً
         const messageLines = [
             "كل سنة وانتي طيبة وبخير يا منه ❤️",
             "كل سنه وانتي طيبه يا احلي من تم 1️⃣9️⃣",
             "<span class='eng-text'>Happy Birthday Menna ❤️</span>",
             "ربنا يديمك ف حياتي يا نونا ❤️",
             "<span class='eng-text'>Menna 1️⃣9️⃣</span>",
-            "اتمني الحاجه الصغيره دي تفرحك ❤️😂"
+            "اتمني الحاجه الصغيره دي تفرحك ❤️😂",
+            "من حمو لــــ نــونــــا🫶🏻🫶🏻🤙🏻🤙🏻"
         ];
 
         let msgIndex = 0;
